@@ -13,5 +13,6 @@ public interface IuserService {
    public user findById(Long id);
    public user save(user User);
    public void Delete(Long id);
+   public String hashContrasenia(String contrasenia);
 
 }
