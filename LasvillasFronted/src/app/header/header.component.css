@@ -1,0 +1,40 @@
+.colorBarra {
+    background-color: #eec7e2;
+    position: fixed; /* Hace que la barra de navegación esté fija en la parte superior */
+    width: 100%; /* Abarca todo el ancho */
+    z-index: 1000; /* Asegura que la barra esté encima del contenido */
+    top: 0;
+  }
+  
+  .colorTexto {
+    color: #ffffff;
+  }
+  
+  /* Logo */
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 15px;
+    vertical-align: middle; /* Alinea el logo verticalmente con el título */
+  }
+  
+  /* Espacio para evitar superposición con el header */
+  .content {
+    padding-top: 70px; /* Ajusta este valor según la altura de tu barra de navegación */
+  }
+  
+  /* Efectos en enlaces */
+  .nav-link.active,
+  .nav-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
