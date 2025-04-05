@@ -1,31 +1,23 @@
-/* Centrado del contenido dentro del footer */
-.footer .container {
-    display: flex; /* Usa Flexbox para organizar el contenido del footer */
-    flex-direction: column; /* Organiza los elementos en una columna */
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
-    text-align: center; /* Asegura que el texto esté alineado al centro */
-  }
-  
-  /* Estilo del mensaje dentro del footer */
-  #mensaje {
-    font-weight: bold; /* Hace el texto del mensaje en negrita */
-    font-size: 1.2em; /* Tamaño de fuente para el mensaje */
-  }
-  
-  /* Si quieres un poco de espacio por encima del footer */
-  .content {
-    padding-bottom: 100px; /* Agrega espacio al final de la sección anterior al footer */
-  }
-  
-  /* Estilo para que el footer quede fijo en la parte inferior */
-  .footer {
-    position: fixed; /* Fija el footer en la pantalla, incluso al hacer scroll */
-    bottom: 0; /* Ubica el footer en la parte inferior de la ventana */
-    left: 0; /* Alinea el footer al borde izquierdo */
-    width: 100%; /* Hace que el footer ocupe el 100% del ancho de la pantalla */
-    background-color: #eec7e2; /* Define el color de fondo del footer */
-    color: #fff; /* Define el color del texto en blanco */
-    padding: 1px 0; /* Agrega un pequeño padding vertical */
-    z-index: 1000; /* Asegura que el footer esté sobre otros elementos */
-    text-align: center; /* Centra el texto dentro del footer */}
+/* Fondo oscuro con un diseño limpio */
+.footer {
+  background: #222;
+  color: #f8f9fa;
+  padding: 15px 0;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del texto del footer */
+.footer-text {
+  margin: 0;
+  font-weight: bold;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+.footer-text:hover {
+  opacity: 1;
+  color: #00d9ff;
+}

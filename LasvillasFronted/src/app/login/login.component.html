@@ -1,0 +1,27 @@
+<div class="login-container">
+    <h2 class="login-title">Iniciar Sesión</h2>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="LoginInicio()">
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="userName">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="contrasenia">
+        <button mat-icon-button matSuffix (click)="togglePassword()" type="button">
+          <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+  
+      <button mat-raised-button type="submit" [disabled]="loginForm.invalid">
+        Iniciar sesión
+      </button>
+    </form>
+  
+    <p class="register-text">¿No tienes cuenta? <a routerLink="/registro">Regístrate</a></p>
+    <p class="register-text">¿Olvidaste tu contraseña? <a routerLink="/login/forgot-password">Recupera Contraseña</a></p>
+  
+  </div>
+  

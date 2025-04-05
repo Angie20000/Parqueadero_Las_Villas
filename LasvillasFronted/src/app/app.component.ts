@@ -7,7 +7,7 @@ import { RegistroComponent } from './registro/registro.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, RegistroComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent,RegistroComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

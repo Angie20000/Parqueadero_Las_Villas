@@ -1,82 +1,82 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            background: #28a745;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #218838;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Registro de Usuario</h2>
-        <form action="procesar_registro.php" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+<div class="container">
+    <!-- Imagen alineada con el formulario -->
+    <img src="imagenes/iconoParqueadero.jpg" alt="Imagen de Registro" class="registro-img">
+   
+    <form [formGroup]="registroForm" (ngSubmit)="CreateUser()">
+       
+        <!-- Campo Nombre -->
+        <div class="form-group">
+            <label for="nombre">Nombre*:</label>
+            <input id="nombre" type="text" formControlName="nombre">
+            <small *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched">
+                El nombre es obligatorio.
+            </small>
+        </div>
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
+        <!-- Campo Apellido -->
+        <div class="form-group">
+            <label for="apellido">Apellido*:</label>
+            <input id="apellido" type="text" formControlName="apellido">
+            <small *ngIf="registroForm.get('apellido')?.invalid && registroForm.get('apellido')?.touched">
+                El apellido es obligatorio.
+            </small>
+        </div>
 
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required>
+        <!-- Campo Dirección -->
+        <div class="form-group">
+            <label for="direccion">Dirección*:</label>
+            <input id="direccion" type="text" formControlName="direccion">
+            <small *ngIf="registroForm.get('direccion')?.invalid && registroForm.get('direccion')?.touched">
+                La dirección es obligatoria.
+            </small>
+        </div>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+        <!-- Campo Email -->
+        <div class="form-group">
+            <label for="Email">Email*:</label>
+            <input id="Email" type="email" formControlName="email">
+            <small *ngIf="registroForm.get('email')?.invalid && registroForm.get('email')?.touched">
+                El email es obligatorio.
+            </small>
+        </div>
 
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" required>
+         <!-- Campo telefono -->
+         <div class="form-group">
+            <label for="telefono">Telefono*:</label>
+            <input id="telefono" type="text" formControlName="telefono">
+            <small *ngIf="registroForm.get('telefono')?.invalid && registroForm.get('telefono')?.touched">
+                El telefono es obligatorio.
+            </small>
+        </div>
+        
+        <!-- Campo Usuario -->
+        <div class="form-group">
+            <label for="Usuario">Usuario*:</label>
+            <input id="Usuario" type="text" formControlName="userName">
+            <small *ngIf="registroForm.get('userName')?.invalid && registroForm.get('userName')?.touched">
+                El usuario es obligatorio.
+            </small>
+        </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <!-- Campo Contraseña -->
+        <div class="form-group">
+            <label for="contraseña">Contraseña*:</label>
+            <input id="contrasenia" type="password" formControlName="contrasenia">
+            <small *ngIf="registroForm.get('contrasenia')?.invalid && registroForm.get('contrasenia')?.touched">
+                La contraseña es obligatoria y debe tener un máximo de 7 caracteres.
+            </small>
+        </div>
 
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required>
+        <!-- Campo Validar Contraseña -->
+        <div class="form-group">
+            <label for="Validarcontraseña">Confirmar Contraseña*:</label>
+            <input id="Validarcontrasenia" type="password" formControlName="Validarcontrasenia">
+            <small *ngIf="registroForm.get('Validarcontrasenia')?.invalid && registroForm.get('Validarcontrasenia')?.touched">
+                Debes confirmar tu contraseña.
+            </small>
+        </div>
 
-            <button type="submit">Registrarse</button>
-        </form>
-    </div>
-</body>
-</html>
-
+        <!-- Botón de Envío -->
+        <button type="submit" [disabled]="registroForm.invalid">Registrar</button>
+    </form>
+</div>
