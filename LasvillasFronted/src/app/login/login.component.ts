@@ -56,6 +56,9 @@ export class LoginComponent implements  OnInit{
           text: 'Bienvenido a la plataforma',
           icon: 'success',
           confirmButtonText: 'Aceptar'
+        }).then(() => {
+          // 🔁 Redirigir a la ruta deseada después del alert
+          this.router.navigate(['/principal']);
         });
         console.log(response);
       },

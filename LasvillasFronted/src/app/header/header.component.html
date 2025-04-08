@@ -16,6 +16,9 @@
         <li class="nav-item mx-2">
           <a class="btn btn-primary custom-btn" [routerLink]="['/login']">Iniciar Sesión</a>
         </li>
+
+      <!-- Si el usuario ha iniciado sesión, mostrar botón de cerrar sesión -->
+      <button class="nav-btn logout" *ngIf="usuario" (click)="cerrarSesion()">Cerrar Sesión</button>
       </ul>
     </div>
   </div>

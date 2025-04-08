@@ -7,4 +7,5 @@ export class Registro {
     email!: String;
     userName!: String;
     contrasenia!: String;
+    rol!: string;
 }

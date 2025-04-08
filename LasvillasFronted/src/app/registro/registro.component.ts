@@ -34,6 +34,7 @@ export class RegistroComponent implements OnInit{
           "direccion":["", Validators.required],
           "email":["", [Validators.required, Validators.email]],
           "telefono":["", Validators.required],
+          "rol":["", Validators.required],
           "userName":["", Validators.required],
           "contrasenia":["", [Validators.required, Validators.minLength(7)]],
           "Validarcontrasenia":["", Validators.required],
@@ -74,6 +75,7 @@ CreateUser() {
       }).then(() => {
         this.registroForm.reset(); // Limpia el formulario después del registro
         this.mensaje = ''; 
+        this.router.navigate(['/login']);
       });
     },
     error: (err) => {

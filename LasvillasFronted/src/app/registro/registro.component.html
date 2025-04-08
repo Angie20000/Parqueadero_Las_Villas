@@ -48,6 +48,15 @@
                 El telefono es obligatorio.
             </small>
         </div>
+
+         <!-- Campo rol -->
+         <div class="form-group">
+            <label for="rol">Rol*:</label>
+            <input id="rol" type="text" formControlName="rol">
+            <small *ngIf="registroForm.get('rol')?.invalid && registroForm.get('rol')?.touched">
+                El rol es obligatorio.
+            </small>
+        </div>
         
         <!-- Campo Usuario -->
         <div class="form-group">
